@@ -6,7 +6,9 @@ An Arabic, interactive, university-level Machine Learning platform built with St
 production — with an independent, in-depth track on **Double/Debiased Machine Learning (DML)**.
 Companion to the Data Science platform [DSplat](https://dsplat.streamlit.app/) and sharing its design system.
 
-![Home page of the Machine Learning Interactive Academy](docs/screenshots/home.png)
+**Open the app · افتح المنصة: [mlplat.streamlit.app](https://mlplat.streamlit.app/)**
+
+[![Home page of the Machine Learning Interactive Academy](docs/screenshots/home.png)](https://mlplat.streamlit.app/)
 
 ## Design · التصميم
 
@@ -119,7 +121,8 @@ every page, all 10 projects, and every optional library simulated as missing.
 
 ## Deployment
 
-Streamlit Community Cloud, main file `streamlit_app.py`, Python 3.11/3.12. See `docs/deployment.md`.
+Live at https://mlplat.streamlit.app/ (Streamlit Community Cloud, main file `streamlit_app.py`, Python 3.11/3.12). See
+`docs/deployment.md`.
 
 ## Adding modules, labs and algorithms
 
