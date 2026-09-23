@@ -6,6 +6,60 @@ An Arabic, interactive, university-level Machine Learning platform built with St
 production — with an independent, in-depth track on **Double/Debiased Machine Learning (DML)**.
 Companion to the Data Science platform [DSplat](https://dsplat.streamlit.app/) and sharing its design system.
 
+![Home page of the Machine Learning Interactive Academy](docs/screenshots/home.png)
+
+## Design · التصميم
+
+- **Arabic first, right to left.** Explanations are in Arabic; code, formulas and technical terms stay in English, left to
+  right.
+- **One light theme shared with DSplat.** The fonts are IBM Plex Sans Arabic and JetBrains Mono, the primary colour is
+  `#1971C2`, and cards and buttons have 10 px rounded corners. The palette is defined in `.streamlit/config.toml` and
+  `assets/css/theme.css`.
+- **Every module opens with the same card:** learning objectives, estimated time, level and prerequisites. Most modules
+  then add intuition boxes, an interactive lab, a quiz and exercises.
+- **Animations have play/pause, step, reset and speed controls,** plus a *Reduced motion* switch in the sidebar.
+- **Three levels of explanation** (beginner, advanced, research) are chosen from the sidebar and change how deep each
+  page goes.
+- **The layout adapts to phones** (see the last screenshot below).
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/breiman_two_cultures.png" alt="Leo Breiman: The Two Cultures"><br>
+      <sub><b>Leo Breiman's philosophy</b>: the Two Cultures module, with its learning-objectives card</sub></td>
+    <td width="50%"><img src="docs/screenshots/rashomon_lab.png" alt="Rashomon subset-selection lab"><br>
+      <sub><b>Rashomon lab</b>: many subsets fit almost equally well</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/gradient_descent_lab.png" alt="Gradient descent lab"><br>
+      <sub><b>Gradient Descent lab</b>: the path over the loss surface, step by step</sub></td>
+    <td><img src="docs/screenshots/svm_margin_animation.png" alt="SVM margin animation"><br>
+      <sub><b>SVM</b>: the margin and support vectors as C changes</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/random_forest_animation.png" alt="Random forest animation"><br>
+      <sub><b>Random Forest</b>: from bootstrap samples to the aggregated vote</sub></td>
+    <td><img src="docs/screenshots/kmeans_animation.png" alt="K-Means animation"><br>
+      <sub><b>K-Means</b>: assignment and update steps; inertia never increases</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/smote_sampler_visualizer.png" alt="SMOTE sampler visualizer"><br>
+      <sub><b>Imbalanced classification</b>: the sampler visualizer (SMOTE, Borderline, ADASYN…)</sub></td>
+    <td><img src="docs/screenshots/dml_cross_fitting.png" alt="DML cross-fitting animation"><br>
+      <sub><b>Double ML</b>: the cross-fitting animation</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/dml_monte_carlo_lab.png" alt="DML Monte Carlo lab"><br>
+      <sub><b>DML Monte Carlo lab</b>: a known data-generating process, with bias and coverage measured</sub></td>
+    <td><img src="docs/screenshots/algorithm_explorer.png" alt="Algorithm explorer"><br>
+      <sub><b>Algorithm Explorer</b>: filter 36 algorithms by task, linearity, scaling and native support</sub></td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="docs/screenshots/home_mobile.png" alt="Home page on a phone" width="280"><br>
+  <sub>The same home page on a phone</sub>
+</p>
+
 ## Purpose
 
 An interactive textbook + laboratory + university course + algorithm explorer + research companion for professors,
