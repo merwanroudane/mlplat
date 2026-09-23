@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.streamlit/secrets.toml
+*.egg-info/
+.DS_Store
+.claude/
+mlruns/
+*.pkl
+*.joblib
+catboost_info/
+Machine_Learning_Interactive_Academy_Master_Prompt_Dr_Marwan_Roudane.md

@@ -1,0 +1,55 @@
+[server]
+maxUploadSize = 20
+runOnSave = false
+
+[runner]
+magicEnabled = false
+
+[client]
+showErrorDetails = "none"
+toolbarMode = "viewer"
+
+[browser]
+gatherUsageStats = false
+
+# Design system shared with DSplat (https://dsplat.streamlit.app/) — light theme only.
+[theme]
+base = "light"
+primaryColor = "#1971C2"
+backgroundColor = "#FCFCFF"
+secondaryBackgroundColor = "#F1F3F9"
+textColor = "#212529"
+linkColor = "#1971C2"
+borderColor = "#DDE3EE"
+codeBackgroundColor = "#F3F0FF"
+codeTextColor = "#0B4F8A"
+dataframeHeaderBackgroundColor = "#F1F3F9"
+dataframeBorderColor = "#DDE3EE"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "10px"
+buttonRadius = "10px"
+linkUnderline = false
+
+font = "'IBM Plex Sans Arabic':https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+baseFontSize = 16
+codeFontSize = "0.86rem"
+headingFontSizes = ["2.1rem", "1.6rem", "1.3rem", "1.1rem", "1rem", "0.9rem"]
+headingFontWeights = [700, 650, 600, 600, 600, 600]
+
+redColor = "#F08C00"
+orangeColor = "#F76707"
+yellowColor = "#E0A100"
+blueColor = "#1C7ED6"
+violetColor = "#7048E8"
+grayColor = "#5C677D"
+greenColor = "#12B886"
+
+chartCategoricalColors = ["#1C7ED6", "#F76707", "#7048E8", "#12B886", "#F59F00", "#15AABF", "#4263EB", "#94D82D"]
+chartSequentialColors = ["#FFFBEA", "#FFF3BF", "#E6FCF5", "#C3FAE8", "#99E9F2", "#66D9E8", "#74C0FC", "#4DABF7", "#339AF0", "#1C7ED6"]
+
+[theme.sidebar]
+backgroundColor = "#F3F4FF"
+secondaryBackgroundColor = "#E7ECF7"
+borderColor = "#D8E0EE"

@@ -1,0 +1,23 @@
+# Machine Learning Interactive Academy — runtime dependencies (Streamlit Community Cloud installs this file)
+# Tested on Python 3.11 with the exact versions noted on each line (verified 2026-09-23).
+# Upper bounds stop at the next minor release whose defaults have NOT been re-verified
+# (content/hyperparameters.py + tests/test_hyperparameters.py must be re-run before widening them).
+
+# ---- core (the app runs with these alone) ----
+streamlit>=1.64,<2              # tested 1.64.0
+scikit-learn>=1.9.1,<1.10       # tested 1.9.1  (1.10 removes LogisticRegression 'penalty'; re-verify before upgrading)
+numpy>=2.2,<3                   # tested 2.4.6
+scipy>=1.13,<2                  # tested 1.17.1
+pandas>=2.2,<4                  # tested 3.0.6
+statsmodels>=0.14,<0.16         # tested 0.15.0
+plotly>=6.5,<8                  # tested 7.1.0
+
+# ---- optional libraries (pages degrade gracefully if any is missing; see core/registry.py) ----
+xgboost>=3.2,<4                 # tested 3.2.0 (3.4.1 needs Python >= 3.12)
+lightgbm>=4.7,<5                # tested 4.7.0 (uses eval_X/eval_y introduced in 4.7)
+catboost>=1.2.10,<1.3           # tested 1.2.10
+optuna>=5.0,<6                  # tested 5.0.0
+shap>=0.51,<0.53                # tested 0.51.0 (0.52.0 needs Python >= 3.12)
+imbalanced-learn>=0.14.2,<0.15  # tested 0.14.2
+DoubleML>=0.11.4,<0.12          # tested 0.11.4
+econml>=0.17,<0.18              # tested 0.17.0

@@ -1,0 +1,8 @@
+# Minimal install: every page renders; optional labs show theory + reference code + an install hint.
+streamlit>=1.64,<2
+scikit-learn>=1.9.1,<1.10
+numpy>=2.2,<3
+scipy>=1.13,<2
+pandas>=2.2,<4
+statsmodels>=0.14,<0.16
+plotly>=6.5,<8

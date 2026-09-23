@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Machine Learning Interactive Academy - design system (shared with DSplat)
+   Colors live in .streamlit/config.toml (native theming). This file only adds
+   what native theming cannot do: RTL/LTR handling and the shared component
+   styles (callouts, cards, formula boxes, roadmap, footer).
+   ========================================================================== */
+
+:root {
+  --ml-ivory: #FCFCFF;
+  --ml-cream: #F1F3F9;
+  --ml-beige: #EDF2FB;
+  --ml-amber: #F59F00;
+  --ml-coral: #F76707;
+  --ml-coral-deep: #1971C2;
+  --ml-peach: #D0EBFF;
+  --ml-softred: #F08C00;
+  --ml-purple: #7048E8;
+  --ml-purple-soft: #F1ECFF;
+  --ml-cyan-soft: #E6F8FB;
+  --ml-sky: #1C7ED6;
+  --ml-text: #212529;
+  --ml-muted: #5C677D;
+  --ml-border: #DDE3EE;
+
+  --ml-radius-sm: 8px;
+  --ml-radius: 12px;
+  --ml-radius-lg: 18px;
+  --ml-space-1: 0.35rem;
+  --ml-space-2: 0.7rem;
+  --ml-space-3: 1.1rem;
+  --ml-shadow-1: 0 1px 2px rgba(40, 60, 110, 0.06), 0 1px 1px rgba(40, 60, 110, 0.04);
+  --ml-shadow-2: 0 6px 18px rgba(40, 60, 110, 0.09);
+}
+
+/* ---------- RTL for Arabic content ---------- */
+.stMain, section[data-testid="stSidebar"] {
+  direction: rtl;
+}
+.stMain .stMarkdown, .stMain .stCaption, section[data-testid="stSidebar"] .stMarkdown {
+  text-align: start;
+}
+
+/* ---------- Keep code, math, charts and tables left-to-right ---------- */
+.stMain pre, .stMain code, [data-testid="stCode"], .stCode,
+.katex, .katex-display, [data-testid="stLatex"],
+.stPlotlyChart, [data-testid="stPlotlyChart"], .js-plotly-plot,
+[data-testid="stVegaLiteChart"], [data-testid="stArrowVegaLiteChart"],
+[data-testid="stGraphVizChart"], [data-testid="stDataFrame"],
+[data-testid="stDataFrameResizable"], .stDataFrame, [data-testid="stTable"] table,
+[data-testid="stJson"] {
+  direction: ltr;
+  text-align: left;
+}
+/* Inline `code` inside Arabic sentences: isolate it so punctuation stays put */
+.stMain p code, .stMain li code, .stMain td code {
+  unicode-bidi: isolate;
+  direction: ltr;
+}
+/* Latin technical term helper */
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+/* Sliders render correctly only LTR; keep their labels RTL */
+[data-testid="stSlider"] > div:not([data-testid="stWidgetLabel"]) { direction: ltr; }
+
+/* ---------- Typography ---------- */
+.stMain h1, .stMain h2, .stMain h3 { letter-spacing: 0; }
+.stMain p, .stMain li { line-height: 1.85; }
+
+/* ---------- Hero (home page) ---------- */
+.ml-hero {
+  background: linear-gradient(120deg, #E7F5FF 0%, #EDF2FF 25%, #F3F0FF 50%, #FFF9DB 75%, #E6FCF5 100%);
+  border: 1px solid var(--ml-border);
+  border-top: 6px solid transparent;
+  border-image: linear-gradient(90deg, #1C7ED6, #7048E8, #F59F00, #F76707, #12B886) 1;
+  border-radius: var(--ml-radius-lg);
+  padding: 1.8rem 1.8rem 1.5rem;
+  box-shadow: var(--ml-shadow-2);
+  direction: rtl;
+}
+.ml-hero .ml-kicker { color: #7048E8; font-weight: 600; font-size: 0.95rem; }
+.ml-hero h1 { margin: 0.2rem 0 0.2rem; font-size: 2.1rem; color: var(--ml-text); }
+.ml-hero .ml-en { direction: ltr; unicode-bidi: isolate; color: var(--ml-muted); font-size: 1.05rem; }
+.ml-hero p { margin: 0.6rem 0 0; font-size: 1.08rem; color: #343A40; }
+.ml-hero .ml-author { margin-top: 0.9rem; font-size: 0.95rem; color: var(--ml-muted); }
+
+/* ---------- Roadmap chips ---------- */
+.ml-roadmap { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; direction: ltr; justify-content: center; }
+.ml-roadmap .ml-step {
+  background: #fff; border: 1px solid var(--ml-border); border-radius: 999px;
+  padding: 0.3rem 0.75rem; font-size: 0.85rem; box-shadow: var(--ml-shadow-1);
+}
+.ml-roadmap .ml-step:nth-child(12n+1) { background: #E7F5FF; border-color: #74C0FC; }
+.ml-roadmap .ml-step:nth-child(12n+3) { background: #F3F0FF; border-color: #B197FC; }
+.ml-roadmap .ml-step:nth-child(12n+5) { background: #FFF9DB; border-color: #FFD43B; }
+.ml-roadmap .ml-step:nth-child(12n+7) { background: #E6FCF5; border-color: #63E6BE; }
+.ml-roadmap .ml-step:nth-child(12n+9) { background: #FFF4E6; border-color: #FFA94D; }
+.ml-roadmap .ml-step:nth-child(12n+11) { background: #E3FAFC; border-color: #66D9E8; }
+.ml-roadmap .ml-step.done { background: #D3F9D8; border-color: #40C057; font-weight: 600; }
+.ml-roadmap .ml-arrow { color: #7048E8; font-weight: 700; }
+
+/* ---------- Callouts (native containers keyed ml-KIND-N) ---------- */
+div[class*="st-key-ml-note"], div[class*="st-key-ml-researcher"], div[class*="st-key-ml-realworld"],
+div[class*="st-key-ml-mistake"], div[class*="st-key-ml-why"], div[class*="st-key-ml-tip"],
+div[class*="st-key-ml-warning"], div[class*="st-key-ml-domain"] {
+  border-radius: var(--ml-radius);
+  padding: 0.85rem 1rem 0.6rem;
+  border-inline-start: 5px solid #1C7ED6;
+  background: #E7F5FF;
+  box-shadow: var(--ml-shadow-1);
+}
+div[class*="st-key-ml-note"] { background: #E7F5FF; border-inline-start-color: #1C7ED6; }
+div[class*="st-key-ml-tip"] { background: #E3FAFC; border-inline-start-color: #15AABF; }
+div[class*="st-key-ml-why"] { background: #FFF9DB; border-inline-start-color: #F59F00; }
+div[class*="st-key-ml-realworld"] { background: #E6FCF5; border-inline-start-color: #12B886; }
+div[class*="st-key-ml-researcher"] { background: #F3F0FF; border-inline-start-color: #7048E8; }
+div[class*="st-key-ml-mistake"] { background: #FFF4E6; border-inline-start-color: #F76707; }
+div[class*="st-key-ml-warning"] { background: #FFF4E6; border-inline-start-color: #E67700; }
+div[class*="st-key-ml-domain"] { background: #EDF2FF; border-inline-start-color: #4263EB; }
+
+/* ---------- Cards ---------- */
+div[class*="st-key-ml-card"] {
+  background: #FFFFFF;
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius);
+  padding: 0.9rem 1rem;
+  box-shadow: var(--ml-shadow-1);
+}
+[data-testid="stColumn"]:nth-child(6n+1) div[class*="st-key-ml-card"] { border-top: 4px solid #1C7ED6; }
+[data-testid="stColumn"]:nth-child(6n+2) div[class*="st-key-ml-card"] { border-top: 4px solid #7048E8; }
+[data-testid="stColumn"]:nth-child(6n+3) div[class*="st-key-ml-card"] { border-top: 4px solid #F59F00; }
+[data-testid="stColumn"]:nth-child(6n+4) div[class*="st-key-ml-card"] { border-top: 4px solid #12B886; }
+[data-testid="stColumn"]:nth-child(6n+5) div[class*="st-key-ml-card"] { border-top: 4px solid #F76707; }
+[data-testid="stColumn"]:nth-child(6n+6) div[class*="st-key-ml-card"] { border-top: 4px solid #15AABF; }
+div[class*="st-key-ml-modinfo"] {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F3F0FF 60%, #E7F5FF 100%);
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius);
+  padding: 0.9rem 1.1rem 0.4rem;
+}
+
+/* ---------- Formula box ---------- */
+div[class*="st-key-ml-formula"] {
+  background: #FFFFFF;
+  border: 1px dashed #91A7FF;
+  border-radius: var(--ml-radius);
+  padding: 0.6rem 1rem 0.3rem;
+}
+
+/* ---------- Code lab ---------- */
+div[class*="st-key-ml-lab"] {
+  background: #FAFBFF;
+  border: 1px solid #C5D5F0;
+  border-radius: var(--ml-radius);
+  padding: 0.8rem 1rem 0.5rem;
+}
+
+/* ---------- Footer ---------- */
+.ml-footer {
+  margin-top: 2.5rem; padding: 1rem 0 0.4rem; border-top: 1px solid var(--ml-border);
+  color: var(--ml-muted); font-size: 0.9rem; text-align: center; direction: rtl;
+}
+.ml-footer .ml-en { direction: ltr; unicode-bidi: isolate; }
+
+/* ---------- Badges ---------- */
+.ml-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ml-badge {
+  display: inline-block; border-radius: 999px; padding: 0.15rem 0.7rem; font-size: 0.82rem;
+  background: var(--ml-cream); border: 1px solid var(--ml-border); color: #495057;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 640px) {
+  .ml-hero { padding: 1.1rem; }
+  .ml-hero h1 { font-size: 1.55rem; }
+  .ml-roadmap .ml-step { font-size: 0.76rem; padding: 0.2rem 0.55rem; }
+}
+
+/* ---------- English (LTR) blocks inside Arabic pages ---------- */
+div[class*="st-key-ltr"] { direction: ltr; text-align: left; }
+div[class*="st-key-ltr"] .stMarkdown { text-align: left; }
+
+/* ---------- MLplat additions ---------- */
+div[class*="st-key-ml-definition"] {
+  background: #FFFFFF; border: 1px solid #B197FC; border-inline-start: 5px solid #7048E8;
+  border-radius: var(--ml-radius); padding: 0.8rem 1rem 0.5rem; box-shadow: var(--ml-shadow-1);
+}
+div[class*="st-key-ml-dsplat"] {
+  background: linear-gradient(120deg, #E7F5FF 0%, #FFF9DB 100%);
+  border: 1px solid #74C0FC; border-radius: var(--ml-radius); padding: 0.9rem 1.1rem 0.5rem;
+}
+div[class*="st-key-ml-algoprofile"] {
+  background: #FFFFFF; border: 1px solid var(--ml-border); border-radius: var(--ml-radius);
+  padding: 0.6rem 1rem 0.4rem; box-shadow: var(--ml-shadow-1);
+}
+div[class*="st-key-ml-causal"] {
+  background: #F3F0FF; border-inline-start: 5px solid #7048E8; border-radius: var(--ml-radius);
+  padding: 0.85rem 1rem 0.6rem;
+}
+.ml-path { display: flex; flex-wrap: wrap; gap: 0.35rem; direction: rtl; }
+.ml-path span { background: #F1F3F9; border: 1px solid var(--ml-border); border-radius: 999px;
+  padding: 0.15rem 0.65rem; font-size: 0.82rem; }
