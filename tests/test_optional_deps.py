@@ -7,9 +7,11 @@ from streamlit.testing.v1 import AppTest
 
 ENTRY = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "streamlit_app.py")
 PAGES = ["trees_ensembles/xgboost.py", "trees_ensembles/lightgbm.py", "trees_ensembles/catboost.py", "trees_ensembles/boosting_comparison.py",
-         "tuning/bayesian_optimization.py", "interpretability/shap.py", "evaluation/imbalanced.py", "causal_ml/plr.py", "causal_ml/irm.py",
+         "tuning/bayesian_optimization.py", "interpretability/shap.py", "imbalanced/imbalanced.py", "imbalanced/imb_oversampling.py",
+         "imbalanced/imb_undersampling.py", "imbalanced/imb_ensembles.py", "imbalanced/imb_probabilities.py",
+         "imbalanced/imb_multiclass_extreme.py", "imbalanced/imb_workflow.py", "causal_ml/plr.py", "causal_ml/pliv.py", "causal_ml/irm.py",
          "causal_ml/hte.py", "causal_ml/doubleml_package.py", "causal_ml/panel_did.py", "causal_ml/dml_extensions.py",
-         "unsupervised/manifold.py", "projects/projects_hub.py", "production/mlops.py", "resources/about.py"]
+         "unsupervised/manifold.py", "projects/projects_hub.py", "projects/capstone_dml.py", "production/mlops.py", "resources/about.py"]
 
 
 @pytest.mark.parametrize("page", PAGES)
